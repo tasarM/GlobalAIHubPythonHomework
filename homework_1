@@ -1,0 +1,10 @@
+# Display types of variable to user
+
+a1 = int(input('enter a number :'))
+a2 = float(input('enter a number :'))
+a3 = input('enter a number :')
+a4 = input('enter a name :')
+a5 = input('enter a charcter :')
+
+print('type of a1 {}\ntype of a2 {}'.format(type(a1), type(a2)))
+print(f'type of a3 {type(a3)}\ntype of a4 {type(a4)}\ntype of a5 {type(a5)}')
