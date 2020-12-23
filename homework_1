@@ -1,4 +1,4 @@
-# Display types of variable to user
+# # GlobalAI Hub Python Homework 1
 
 a1 = int(input('enter a number :'))
 a2 = float(input('enter a number :'))
