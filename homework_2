@@ -1,0 +1,22 @@
+# GlobalAI Hub Python Homework 2 
+info = []
+
+f_name = input('your first name :')
+info.append(f_name)
+
+l_name = input('your last name :')
+info.append(l_name)
+
+age = int(input('your age :'))
+info.append(age)
+
+date = int(input('date of birth(just year) :'))
+info.append(date)
+
+for i in info:
+    print(i)
+
+if (age < 18):
+    print('You can not go out because it\'s too dangerous')
+else:
+    print('You can go out to the street.')
