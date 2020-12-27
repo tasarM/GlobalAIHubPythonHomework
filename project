@@ -1,0 +1,87 @@
+# GlobalAIHub Python project
+# Student Managment System
+
+class Management_System():
+    def __init__(self):
+
+        self.names = ['cristiano', 'mike', 'anne', 'marie']
+        self.surnames = ['ronaldo', 'tyson', 'hathaway', 'curie']
+        self.grade = {}
+        
+        #self.__data()
+
+
+    def data(self):
+        for i in range(4):
+            if (i == 3):
+                print('Please try again later')
+                return False
+            
+            self.name = input("enter your name: ")
+            self.surname = input("enter your surname: ")
+            print()
+
+            for i in range(len(self.names)):
+                for j in range(len(self.surnames)):
+                    if((self.name.lower() == self.names[i]) and (self.surname == self.surnames[j])):
+                        print('Welcome')
+                        return True
+                        
+
+        #self.lesson()
+            
+
+    def lesson(self):
+        self.lessons = []
+        print('Please enter five lessons')
+        for i in range(1,6):
+            les = input(f'Enter {i}.lesson: ')
+            self.lessons.append(les)
+
+        print("You must attend at least 3 classes\n",
+              "You must attend 5 classes at most\n")
+        self.numberOfLesson = int(input("How many classes do you want to attend : "))
+        if (self.numberOfLesson <3):
+            return print('You failed in class')
+
+        self.__choice()
+
+
+    def __choice(self):
+        print("Please choose a lesson at lest below:")
+        print(self.lessons)
+        self.chosen_lesson = input("Enter the name of your chosen course: ")
+        self.__results()
+
+    def __results(self):
+        print("Please enter your exam results...")
+        self.grade["midterm"] = int(input("midterm: "))
+        self.grade["final"] = int(input("final: "))
+        self.grade["project"] = int(input("project: "))
+
+        self.__final_grade()
+
+
+    def __final_grade(self):
+        self.result = int(self.grade["midterm"]*(3/10) + self.grade["final"]*(5/10) + self.grade["project"]*(2/10))
+        if(self.result > 90):
+            print("AA")
+        elif 70 < self.result < 90:
+            print("BB")
+        elif 50 < self.result < 70:
+            print("CC")
+        elif 30 < self.result < 50:
+            print("DD")
+        elif self.result < 30:
+            print("FF")
+            print("You did not pass the exam")
+        
+        
+if __name__ == '__main__':
+    test = Management_System()
+    while(True):
+        if(test.data() == True):
+            test.lesson()
+            break
+        else:
+            break
