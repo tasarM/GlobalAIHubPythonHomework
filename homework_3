@@ -1,0 +1,49 @@
+# GlobalAIHub Python project
+# Hangman Game
+
+import random
+
+words = ["q u a l i t y"] 
+letter = ""
+same = []
+game = random.choice(words)
+game = game.split(" ")
+count = 0
+test = 3
+
+while True:
+    letter=input("Please enter a word:")
+
+    if(letter in same):
+        print("You already tried that\n\n")
+        pass
+    
+    else:
+        for a in range(0,len(game)):
+            if (letter == game[a]):
+                same.append(letter)
+                remaining = len(game)-1
+                print(f"You found the letter {letter}. There are still {remaining} words",end='\n\n')
+                count += 1
+                while True:
+                    try:
+                        game.remove(letter)
+                        
+                    except ValueError:
+                        break
+                break
+        if(test <1):
+            print("Game is over")
+            break
+
+        if(count == 0):
+            test -= 1
+            print(f"You hava {test} rıghts left\n\n")
+            
+        if(count > 0 and test > 0):
+            count = 0
+            
+        if(len(game) == 0):
+            print("Congratulations! you won")
+            print("word: ",words)
+            break
